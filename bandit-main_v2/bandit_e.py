@@ -27,7 +27,6 @@ class cube:
         self.d = d
         self.ys = ys
         self.xs = xs       
-        self.parent = None  #in fact, there is no need for parent and children
         self.children = []
         
         
@@ -52,15 +51,7 @@ class cube:
             self.xs.append(x)
             self.ys.append(y)
     
-    
-# =============================================================================
-#     def insert_all_children(self, x, y):
-#         self.insert_point(x, y)
-#         for j in range(len(self.children)):
-#             q = self.children[j]
-#             q.insert_all_children(x, y)
-#since elimination, we do not need to insert x y into parent cube
-# =============================================================================
+
         
         
         
@@ -194,7 +185,6 @@ class BMO_E:
     
     
     def play_one_batch(self, cubes, nb):
-        #can store max rewards to reduce the calculation of elimination
         print('every cube need to be played {} times this batch'.format(nb))
         
         for cube in cubes:
@@ -280,8 +270,8 @@ class BMO_E:
         #delta_regret = (np.log(self.delta_regret*8000) - 8.693) / 2.427
         scale_regrets = [max(0, delta_regret - reward) for reward in scale_rewards]
         regrets = [(m_regret - reward) for reward in scale_rewards]
-        plt.plot(np.cumsum(scale_regrets))
-        plt.plot(np.cumsum(regrets))
-        plt.show()
+        #plt.plot(np.cumsum(scale_regrets))
+        #plt.plot(np.cumsum(regrets))
+        #plt.show()
         
-        return np.cumsum(scale_regrets), np.cumsum(regrets)
+        return scale_regrets, regrets
