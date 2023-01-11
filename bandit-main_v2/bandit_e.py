@@ -215,7 +215,7 @@ class BMO_E:
         rewards = [cube.mean_reward() for cube in cubes]
         max_reward = np.max(rewards)
         rewards_diff = max_reward - rewards
-        s_cubes_idx = np.where(rewards_diff <= 3*Hb)[0]
+        s_cubes_idx = np.where(rewards_diff <= (2+1/self.c)*Hb)[0]
         s_cubes = [cubes[idx] for idx in s_cubes_idx]
         return s_cubes
                 
