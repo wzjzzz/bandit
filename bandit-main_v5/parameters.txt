@@ -1,0 +1,13 @@
+bmo：   
+n: phi=0.1, eta=1e-6, split_times=2, delta=1e-3, epsilon=1e-2
+z:  phi=0.1, eta=1e-5, 
+p: ...
+
+
+bmo_40:
+n: phi=0.01, eta=1e-6, split_times=2, delta=1e-3, epsilon=1e-2
+
+
+
+bmo_50:
+n: phi=0.01, eta=1e-6, split_times=1, delta=1e-3, epsilon=1e-2
